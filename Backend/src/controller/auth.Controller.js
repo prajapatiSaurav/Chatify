@@ -72,6 +72,8 @@ export async function signup(req,res){
 export async function singin(req,res) {
     
      try {
+        if(!req.body) return res.status(401).json({message : "provide the credeantials"})
+
         const {email,password} = req.body;
 
         if(!password || !email){
