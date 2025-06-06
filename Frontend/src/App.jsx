@@ -11,6 +11,15 @@ import NotificationPage from "./pages/NotificationPage.jsx"
 import OnboardingPage from "./pages/OnBoardingPage.jsx"
 
 function App() {
+
+  const {data,isloading,error} = useQuery({
+    queryKey: ["todos"],
+
+    queryFn: async ()=>{
+      const res = await fetch("");
+      return data;
+    }
+  })
   return (
     <div className='h-screen' data-theme="night">
       <Toaster/>
